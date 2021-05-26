@@ -1,0 +1,42 @@
+.homecompanies
+    &__swiper
+        background-color: #FAFAFA
+        overflow: hidden
+        @include plus1025()
+            position: relative
+            background-color: rgba(#FAFAFA, .95)
+            height: 244px
+            padding-top: 87px
+            padding-bottom: 87px
+            &::before
+                content: ''
+                position: absolute
+                top: 0
+                background: url(../img/homecompanies/background.svg)
+                right: 0
+                display: block
+                width: 100%
+                height: 100%
+                z-index: -1
+    &__wrapper
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 70px 10px
+        padding: 40px 20px
+        @include plus1025()
+            padding: 0
+            grid-gap: 0
+            display: flex
+            height: 70px
+
+    &__slide
+        flex-shrink: 0
+        height: 70px
+        @include plus1025()
+            height: 100%
+        a
+            display: inline-block
+            height: 100%
+            img
+                height: 100%
+                object-fit: contain

@@ -1,0 +1,186 @@
+.footer
+    background-color: #24346D
+    min-height: 812px
+    color: #fff
+    width: 100%
+    padding: 0 20px
+    padding-top: 30px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    @include plus1025()
+        min-height: 408px
+        padding-top: 62px
+    
+    &__top
+        @include plus1025()
+            display: flex
+
+
+        &__logo
+            display: flex
+            flex-direction: column
+            align-items: center
+            font-family: firagoreg
+            @include font(14px, 18px)
+            margin-bottom: 40px
+            @include plus1025()
+                margin-bottom: 0
+                @include font(16px, 24px)
+                width: 293px
+                
+            img
+                width: 161px
+                margin-bottom: 24px
+                @include plus1025()
+                    width: unset
+                    margin-bottom: 32px
+            p
+                text-align: center
+                @include plus1025()
+                    text-align: unset
+        &__hr
+            display: none
+            opacity: .2
+            background-color: #FFFFFF
+            width: 100%
+            height: 1px
+            margin-bottom: 19px
+            margin-top: 20px
+            width: 1px
+            height: 209px
+            margin: 0
+            margin-left: 58px
+            margin-right: 80px
+            @include plus1025()
+                display: block
+
+            @include plus1900()
+                margin-left: 98px
+                margin-right: 130px
+
+        &__lists
+            display: flex
+            flex-direction: column
+            align-items: center
+            position: relative
+            font-family: firagoreg
+            @include font(14px, 28px)
+            
+            @include plus1025()
+                @include font(16px, 28px)
+                align-items: flex-start
+                flex-direction: row
+                flex-grow: 1
+                justify-content: space-between
+            h3
+                margin-bottom: 40px
+                font-family: bpg001caps
+                @include font(16px, 17px)
+                text-align: center
+                
+                @include plus1025()
+                    @include font(22px, 23px)
+                    text-align: unset
+                    margin-bottom: 22px
+                
+            &__contact
+                &__content
+
+                    &__numbers
+                        display: grid
+                        grid-gap: 20px
+                        position: relative
+                        justify-items: center
+                        justify-content: center
+                        @include plus1025()
+                            grid-gap: 16px
+                            justify-content: unset
+                            justify-items: unset
+                        &::before
+                            @include plus1025()
+                                position: absolute
+                                right: calc( 100% + 20px )
+                                top: 0
+                                content: url(../img/footer-tel.svg)
+                    &__email
+                        position: relative
+                        margin-top: 10px
+                        margin-bottom: 20px
+                        display: inline-block
+                        @include plus1025()
+                            margin-bottom: 0
+                        &::before
+                            @include plus1025()
+                                content: url(../img/email.svg)
+                                position: absolute
+                                right: calc( 100% + 20px )
+                                top: 4px
+                            
+            &__joinus
+                h3
+                    display: none
+                    @include plus1025()
+                        display: block
+                &__ul
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    width: max-content
+                    
+                    li
+                        display: inline-block
+                        &:not(:last-of-type)
+                            margin-right: 8px
+                        a
+                            display: flex
+                            width: 100%
+                            height: 100%
+            &__nav
+                margin-bottom: 40px
+                @include plus1025()
+                    margin-bottom: 0
+                &__ul
+                    display: grid
+                    justify-content: center
+                    justify-items: center
+                    @include plus1025()
+                        display: block
+    &__bottom
+        display: flex
+        justify-content: center
+        flex-direction: column
+        align-items: center
+        padding-bottom: 20px
+        position: relative
+        @include plus1025()
+            flex-direction: row
+            justify-content: space-between
+
+        .smartweb
+            margin-top: 8px
+            font-family: firagoreg
+            a
+                color: $darkred
+                text-transform: uppercase
+                font-size: 16px 
+        span
+            @include font(14px, 15px)
+            font-family: firagoreg
+            @include plus1025()
+                @include font(16px, 17px)
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            bottom: calc( 100% + 10px)
+            right: 0
+
+            background-color: #FFFFFF
+            width: 100%
+            height: 1px
+            margin-bottom: 19px
+            margin-top: 20px
+            @include plus1025()
+                opacity: .2
+                bottom: 100%

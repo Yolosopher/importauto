@@ -1,0 +1,95 @@
+// colors
+$blue: #20489D
+$green: #93C54B
+$yellow: #FFC01E
+$grey: #E7E7E7
+$black26: #262626
+$darkred: #be2227
+$lightred: #df4844
+$bglayer: #141313
+$pink: #E3BFC0
+
+
+
+    
+$width450: 450px
+$width700: 700px
+$width769: 769px
+$width1025: 1025px
+$width1279: 1279px
+$width1441: 1441px
+$width1900: 1900px
+$max-width: 1643px // 1006px
+$containerPaddingIpad: 20px
+$containerPadding: 30px
+$padL: calc( ((100vw - 10px) - 1697px) / 2)
+
+    
+
+/* Chrome, Safari, Edge, Opera */
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button 
+//     -webkit-appearance: none !important
+//     margin: 0 !important
+
+
+/* Firefox */
+// input[type=number] 
+    // -moz-appearance: textfield !important
+
+
+@mixin plus450()
+    @media screen and (min-width: $width450)
+        @content
+
+@mixin plus700()
+    @media screen and (min-width: $width700)
+        @content
+
+@mixin plus769()
+    @media screen and (min-width: $width769)
+        @content
+
+@mixin plus1025()
+    @media screen and (min-width: $width1025)
+        @content
+
+@mixin plus1441()
+    @media screen and (min-width: $width1441)
+        @content
+
+@mixin plus1900()
+    @media screen and (min-width: $width1900)
+        @content
+
+@mixin sizePlus($width)
+    @media screen and (min-width: $width)
+        @content
+
+// @mixin upperCase($bold)
+//     font-family: mtavruli !important
+//     text-transform: uppercase !important
+//     font-weight: 500 !important
+//     text-transform: uppercase
+//     @if $bold
+//         font-weight: 600 !important
+
+        
+
+@mixin blur($px)
+    -webkit-filter: blur($px)
+    -moz-filter: blur($px)
+    -o-filter: blur($px)
+    -ms-filter: blur($px)
+    filter: blur($px)
+
+@mixin maxcolumn($num)
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: $num /* number of lines to show */
+    -webkit-box-orient: vertical
+
+@mixin font($size, $lnh)
+    font-size: $size
+    line-height: $lnh

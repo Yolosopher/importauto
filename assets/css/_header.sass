@@ -1,0 +1,459 @@
+.redbtn
+    color: #fff
+    background-color: $lightred
+    font-family: bpg002caps
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    cursor: pointer
+    overflow: hidden
+    border-radius: 8px
+    transition: all .4s ease-in-out
+    width: 100%
+    height: 54px
+    @include plus1025()
+        width: 274px
+        height: 54px
+    .redbtn__arrow,
+    .redbtn__text
+        display: flex
+        justify-content: center
+        align-items: center
+        min-width: 100%
+        width: 100%
+        height: 100%
+        overflow: hidden
+        transform: translateX(0)
+        transition: all .4s ease-in-out
+    &:hover
+        background-color: $darkred
+        .redbtn__arrow,
+        .redbtn__text
+            transform: translateX(100%)
+
+.header
+    height: 84px
+    width: 100%
+    background-color: #fff
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 20px
+    position: relative
+    @include plus1025()
+        height: 194px
+        position: static
+    .burger
+        cursor: pointer
+        @include plus1025()
+            display: none
+        
+    .nav
+        display: flex
+        align-items: center
+        @include font(16px, 17px)
+        font-family: bpg002caps
+        color: $black26
+        flex-direction: column
+        
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%)
+        @include plus1025()
+            height: 100%
+            position: static
+            flex-direction: row
+            align-items: center
+            transform: none
+            left: unset
+            top: unset
+
+        &__ul
+            display: none
+            padding: 33px 20px
+            background-color: #fff
+            align-items: center
+            @include plus1025()
+                display: flex
+            li
+                &:not(:last-of-type)
+                    margin-bottom: 44px
+                a
+                    color: inherit
+                    transition: color .1s ease-out
+                    &:hover, &.active
+                        color: $darkred
+                &__loginbtn
+                    display: none
+                @include plus1025()
+                    margin-bottom: 0 !important
+                    margin-right: 26px
+                @include plus1900()
+                    margin-right: 56px
+
+        &__langbar
+            display: none
+            justify-content: center
+            align-items: center
+            overflow: hidden
+            width: 54px
+            height: 54px
+            background-color: transparent
+            transition: .4s ease-in-out
+            border-radius: 27px
+            @include plus1025()
+                display: flex
+            &:hover
+                background-color: $pink
+            &__ul
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                height: 158px
+                padding: 9px 0
+                cursor: pointer
+                
+                li
+                    display: flex
+                    width: 36px
+                    height: 36px
+                    pointer-events: none
+                    cursor: pointer
+                    position: relative
+                    a
+                        svg
+                            position: absolute
+                            top: 0
+                            left: 0
+                    &:nth-of-type(1)
+                        order: 1
+                    &:nth-of-type(2)
+                        order: 2
+                    &:nth-of-type(3)
+                        order: 3
+                    &.active
+                        order: 2 !important
+                        
+                    
+            &.toggled
+                height: 158px
+                background-color: $pink
+                ul
+                    cursor: initial
+                    li
+                        pointer-events: initial
+
+        &__loginbtn
+            display: none
+            @include plus1025()
+                &.redbtn
+                    display: flex
+                    margin-right: 54px
+.loginbtn__mobile
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 36px
+    height: 36px
+    background-color: $darkred
+    border-radius: 50%
+    cursor: pointer
+    @include plus1025()
+        display: none
+
+
+.mobilenav
+    position: fixed
+    display: flex
+    flex-direction: column
+    top: 0
+    right: 100%
+    width: 100%
+    height: 100vh
+    background-color: #fff
+    padding: 32px 20px
+    z-index: 999
+    color: $black26
+    @include font(16px, 17px)
+    font-family: bpg002caps
+    transition: right .4s ease-in-out
+    @include plus1025()
+        display: none
+    &.active
+        a
+            color: $darkred
+    &__X
+        margin-bottom: 34px
+        cursor: pointer
+        svg
+            fill: #000
+
+    &__ul
+        display: grid
+        grid-gap: 44px
+        margin-bottom: 138px
+        li
+            position: relative
+            &.active
+                color: $darkred
+                &::after
+                    content: ''
+                    display: block
+                    width: 7px
+                    height: 7px
+                    right: 0
+                    top: 50%
+                    position: absolute
+                    border-radius: 50%
+                    background-color: $darkred
+                    transform: translateY(-50%)
+            a
+                // letter-spacing: .022em
+            
+    &__langbarul
+        display: flex
+        margin: 0 auto
+        li
+            &:nth-of-type(2)
+                margin: 0 20px
+    &.toggled
+        right: 0
+
+.loginmodal
+    position: fixed
+    top: 0
+    left: 100%
+    background-color: #EBEBEB
+    height: 
+    display: flex
+    flex-direction: column
+    z-index: 999
+    width: calc( 100% + 1px )
+    height: 100vh
+    transition: .4s ease-in-out
+    @include plus1025()
+        width: 531px
+        height: calc( 100vh - 88px )
+        max-height: 686px
+        border-radius: 8px
+        overflow: hidden
+        top: -100%
+        left: 50% !important
+        opacity: 0
+        transform: translate(-50%, -50%)
+    &__X
+        position: absolute
+        top: 20px
+        right: 20px
+        z-index: 1
+        cursor: pointer
+
+        svg
+            fill: #fff
+    &__cover
+        width: 100%
+        height: 40%
+        position: relative
+        color: #fff
+        display: flex
+        align-items: center
+
+        @include plus1025()
+            height: 278px
+        
+        &__imgbox
+            position: absolute
+            top: 0
+            left: 0
+            // z-index: 1
+            width: 100%
+            height: 100%
+            background-image: url(../img/cargo-ship.jpg)
+            background-size: cover
+            background-repeat: no-repeat
+            background-color: rgba(#24346D, .85)
+            background-blend-mode: multiply
+        &__texts
+            position: relative
+            z-index: 1
+            width: 100%
+            padding: 0 15px
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            @include plus1025()
+                align-items: flex-start
+                padding: 0 60px
+            
+            h3
+                @include font(24px, 30px)
+                font-family: bpg001caps
+                margin-bottom: 15px
+                @include plus1025()
+                    @include font(36px, 43px)
+                    
+            p
+                @include font(14px, 18px)
+                font-family: firagoreg
+                @include plus1025()
+                    max-width: 246px
+    &__profile
+        display: none
+        grid-gap: 15px
+        padding: 42px 20px
+        width: 100%
+        grid-template-columns: 100%
+        grid-auto-rows: auto
+        align-content: flex-start
+        margin-top: 32px
+        height: max-content
+        @include plus1025()
+            flex-grow: 1
+            padding: 10px 60px
+            overflow: hidden
+        &__bars
+            width: 100%
+            height: 54px
+            border-radius: 8px
+            display: flex
+            align-items: center
+            justify-content: center
+            span
+                color: #fff
+                font-family: bpg001caps
+                @include font(16px, 30px)
+                
+            &.infobar
+                background-color: #fff
+                padding: 7px 12px
+                justify-content: flex-start
+                position: relative
+                .infobar__imgbox
+                    width: 40px
+                    height: 40px
+                    border-radius: 50%
+                    overflow: hidden
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                .infobar__nameemail
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    h2
+                        line-height: 0
+                    span
+                        @include font(14px, 1)
+                        color: #293F75
+                    p
+                        margin-top: 2px
+                        color: $black26
+                        font-family: firagoreg
+                        @include font(12px, 1)
+                        
+            &.mypanel
+                background-color: #293F75
+            &.logout
+                background-color: $lightred
+
+    &__form
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        padding: 42px 20px
+        @include plus1025()
+            flex-grow: 1
+            padding: 10px 60px
+            align-items: center
+            overflow: hidden
+        &__content
+            width: 100%
+            height: max-content
+        input
+            font-family: firagoreg
+            @include font(16px, 17px)
+            color: $black26
+        .input-div
+            height: 60px
+            padding: 0 21px
+            display: flex
+            align-items: center
+            border: 1px solid transparent
+            background-color: #fff
+            border-radius: 10px
+            transition: .1s ease-in-out
+            &:not(:last-of-type)
+                margin-bottom: 20px
+            &:last-of-type
+                margin-bottom: 11px
+            svg
+                margin-right: 10px
+            input
+                flex-grow: 1
+            &.invalid-shown
+                border-color: $darkred
+        &__afterinputs
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 100%
+            font-family: firagoreg
+            @include font(14px, 16px)
+            color: $black26
+            margin-bottom: 40px
+            // @include plus1025()
+            //     margin-bottom: 60px
+        &__remember
+            display: flex
+            align-items: center
+            cursor: pointer
+            &__customcheckbox
+                margin-right: 10px
+                display: flex
+                width: 15px
+                height: 15px
+                border: 1px solid #3E3E3E
+                border-radius: 3px
+                background-color: transparent
+
+            input
+                display: none
+                &:checked + .loginmodal__form__remember__customcheckbox
+                    background-color: #3E3E3E
+        &__submit
+            width: 100%
+            height: 60px
+
+    
+    &.toggled
+        left: 0
+        @include plus1025()
+            top: 50%
+            opacity: 1
+    &.signed
+        .loginmodal__form
+            display: none !important
+        .loginmodal__profile
+            display: grid
+.loginmodalbg
+    z-index: 998
+    position: fixed
+    display: none
+    opacity: 0
+    width: 0
+    height: 0
+    top: 0
+    left: 0
+    background-color: transparent
+    transition: 0s
+    @include plus1025()
+        display: block
+    &.toggled
+        opacity: 1
+        width: 100%
+        height: 100vh
+        

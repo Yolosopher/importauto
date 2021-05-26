@@ -1,0 +1,97 @@
+*     
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    outline: none
+    resize: none
+    // transition: .1s
+    // -webkit-touch-callout: none
+    // -webkit-user-select: none
+    // -moz-user-select: none
+    // -ms-user-select: none
+    // user-select: none
+    -webkit-tap-highlight-color: transparent
+
+input, textarea
+    &:before, &:after 
+        -webkit-user-select: initial
+        -khtml-user-select: initial
+        -moz-user-select: initial
+        -ms-user-select: initial
+        user-select: initial
+    
+input, button, textarea
+    background-color: transparent
+    border: none
+    outline: none
+     
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  
+    transition: background-color 5000s ease-in-out 0s
+
+
+a, input, textarea
+    text-decoration: none
+    color: inherit
+    font-family: inherit
+    font-weight: inherit
+    font-size: inherit
+    line-height: inherit
+
+ul
+    li
+        list-style-position: inside
+        list-style: none
+    
+div.default-ul
+    p
+        &:not(:last-child)
+            margin-bottom: 1em
+            
+    ul li
+        list-style: initial
+        list-style-position: inside
+html
+    font-family: 
+    font-size: 16px
+    line-height: 1.6em
+    scroll-behavior: smooth
+    // @include plus1025()
+    //     font-size: 13px
+    // @include plus1441()
+    //     font-size: 14px
+    // @include sizePlus(1800px)    
+    //     font-size: 16px
+
+
+
+
+
+    
+// html::-webkit-scrollbar 
+//     @include plus1025()
+//         width: 10px
+//         background-color: #F2F2F2
+
+// html::-webkit-scrollbar-thumb 
+//     @include plus1025()
+        // background-color: $cyan
+
+// html::-webkit-scrollbar-track 
+//     @include plus1025()
+//         background-color: #F2F2F2
+// *:not(html):not(body)::-webkit-scrollbar 
+//     @include plus1025()
+//         width: 3px
+//         background-color: #F2F2F2
+
+// *:not(html):not(body)::-webkit-scrollbar-thumb 
+//     @include plus1025()
+//         background-color: $cyan
+
+// *:not(html):not(body)::-webkit-scrollbar-track 
+//     @include plus1025()
+//         background-color: #F2F2F2
