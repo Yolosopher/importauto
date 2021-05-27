@@ -396,11 +396,20 @@ html {
 }
 
 @media screen and (min-width: 1025px) {
+  .header .nav__loginbtn {
+    width: 180px;
+  }
   .header .nav__loginbtn.redbtn {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin-right: 54px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .header .nav__loginbtn {
+    width: 274px;
   }
 }
 

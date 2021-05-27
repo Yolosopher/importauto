@@ -147,9 +147,12 @@
         &__loginbtn
             display: none
             @include plus1025()
+                width: 180px
                 &.redbtn
                     display: flex
                     margin-right: 54px
+            @include sizePlus(1366px)
+                width: 274px
 .loginbtn__mobile
     display: flex
     justify-content: center
