@@ -4,6 +4,7 @@
     overflow: hidden
     margin-bottom: 50px
     @include plus1025()
+        min-height: 466px
         margin-bottom: 165px
         height: calc( 100vh - 194px )
     &__swiper
@@ -21,6 +22,7 @@
         background-repeat: no-repeat
         background-size: cover
         @include plus1025()
+            min-height: 466px
             height: calc( 100vh - 194px )
         &__link
             @include plus700()
@@ -54,14 +56,18 @@
                     font-weight: normal
                     font-family: bpg002caps
                     @include font(30px, 48px)
-                    margin-bottom: 54px
+                    margin-bottom: 34px
+                    @include sizePlus(400px)
+                        margin-bottom: 54px
                     @include plus1025()
                         max-width: 720px
                         @include font(48px, 72px)
                 p
                     font-weight: normal
                     font-family: firagoreg
-                    margin-bottom: 107px
+                    margin-bottom: 37px
+                    @include sizePlus(400px)
+                        margin-bottom: 107px
                     @include font(14px, 18px)
                     @include plus1025()
                         max-width: 592px

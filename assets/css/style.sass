@@ -30,48 +30,11 @@
 // containersearch 
 @import _mapsearch
 
-.containerssearchgrid
-    margin-bottom: 30px
-    @include plus1025()
-        margin-bottom: 176px
-    &__title
-        margin-bottom: 40px
-        @include plus1025()
-            margin-bottom: 100px
-    &__ul
-        display: grid
-        grid-gap: 30px
-        @include plus1025()
-            grid-template-columns: repeat(4, 1fr)
-            grid-gap: 100px 25px
-        li
-            display: block
-        img
-            margin-bottom: 50px
-            object-fit: contain
-            height: 64px
-            width: 100%
-    &__form
-        height: 64px
-        width: 100%
-        border-radius: 12px
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08)
-        padding: 5px
-        padding-left: 20px
-        display: flex
-        align-items: center
-        button
-            margin-left: 10px
-        input
-            flex-grow: 1
-            width: fit-content
-            font-weight: normal
-            font-family: firagoreg
-            @include font(14px, 16px)
-            @include plus1025()
-                @include font(16px, 18px)
-
+@import _containersearchgrid
 // containersearch END
 
 
-    // #BFD5DF
+// contactpagemain
+@import _contactpage
+@import _contactpage
+// contactpagemain END
