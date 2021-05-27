@@ -1,0 +1,29 @@
+.pageInfoNav
+    height: 54px
+    font-family: bpg001caps
+    @include font(12px, 17px)
+    font-weight: normal
+    letter-spacing: 0.02em
+    background-color: #FAFAFA
+    cursor: default
+    @include plus1025()
+        @include font(16px, 17px)
+        
+        height: 83px
+    &__container
+        display: flex
+        height: 100%
+        align-items: center
+    &__box
+        color: $darkred
+        a
+            color: $black26
+        &.withcar
+            color: $darkred
+            a
+                &:nth-of-type(2)
+                    color: $darkred
+            span
+
+                color: $black26
+                text-transform: uppercase

@@ -1,0 +1,168 @@
+.mapsearch
+    position: relative
+    margin-bottom: 70px
+    @include plus1025()
+        margin-bottom: 100px
+    &__form
+        // height: 500px
+        z-index: 2
+        padding: 30px 0 15px
+        background-color: #fff
+        @include plus1025()
+        
+            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.24)
+            border-radius: 12px
+            display: flex
+            align-items: center
+            padding: 8px 8px 8px 28px
+            width: 733px
+
+            position: absolute
+            top: 20px
+        input
+            flex-shrink: 0
+            font-weight: normal
+            font-family: firagoreg
+            @include font(14px, 16px)
+
+            padding: 18px 28px
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1)
+            border-radius: 12px
+            width: 100%
+            margin-bottom: 15px
+            @include plus1025()
+                margin-bottom: 0
+                width: unset
+                border-radius: 0
+                padding: 0
+                box-shadow: none
+                @include font(16px, 18px)
+                
+                width: 346px
+        select
+            display: none
+        &__hr
+            flex-shrink: 0
+            display: none
+            @include plus1025()
+                display: block    
+                margin: 0 14px
+                width: 1px
+                height: 40px
+                background-color: #D6D6D6
+        &__sealine
+            flex-grow: 1
+            font-family: firagoreg
+            color: $black26
+            position: relative
+            
+            padding: 18px 28px
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1)
+            border-radius: 12px
+            width: 100%
+            margin-bottom: 15px
+            @include plus1025()
+                margin-bottom: 0
+                width: unset
+                border-radius: 0
+                padding: 0
+                box-shadow: none
+            &__name
+                font-family: bpg001caps
+                @include font(12px, 14px)
+                color: #D6D6D6
+                font-weight: normal
+                margin-bottom: 2.5px
+                @include plus1025()
+                    margin-bottom: 4px
+            &__selectUl
+                --heightt: #{'auto'}
+                z-index: 10
+                opacity: 0
+                position: absolute
+                top: calc( 100% + 5px )
+                left: 0
+                width: 100%
+                grid-gap: 6px
+                display: grid
+                overflow: hidden
+                background-color: #fff
+                padding: 0
+                border-radius: 12px
+                height: 0
+                box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.24)
+                transition: .3s ease-in-out
+                // animation: 
+                @include plus1025()
+                    top: calc( 100% + 16px )
+                    left: -14px
+                    width: calc( 100% + #{24px + 146px} )
+                li
+                    cursor: pointer
+                    color: $black26
+                    padding: 6px 12px
+                    background-color: transparent
+                    transition: .1s ease-in-out
+                    &.active
+                        color: $darkred
+                        font-weight: 900
+                    &:hover
+                        color: #fff
+                        font-weight: normal
+                        background-color: $lightred
+                &.toggled
+                    opacity: 1    
+                    padding: 12px 0
+                    height: var(--heightt)
+            &__selected
+                position: relative
+                display: flex
+                cursor: pointer
+                width: max-content
+                
+                overflow: hidden
+                width: fit-content
+                &::before
+                    order: 1
+                    transform: translateY(-2px)
+                    margin-left: 8px
+                    content: url(../img/containersearch/chevron-down.svg)
+                &::after
+                    content: attr(data-selected)
+                    overflow: hidden
+                    width: fit-content
+                    @include maxcolumn(1)
+                
+            
+
+        &__submit
+            flex-shrink: 0
+            @include plus1025()
+                margin-left: 10px
+                width: 138px
+    &__map
+        height: 195px
+        background-color: #BFD5DF
+        position: relative
+        @include plus1025()
+            position: static
+            height: auto
+            padding: 58px 0
+        .container
+            height: 100%
+            padding: 11px 0
+            @include plus1025()
+                padding: 0 20px
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            width: 100%
+            height: 100%
+            background-color: rgba(#293F75, .5)
+        img
+            width: 100%
+            height: 100%
+            object-fit: contain
+

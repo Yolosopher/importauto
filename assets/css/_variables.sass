@@ -93,3 +93,8 @@ $padL: calc( ((100vw - 10px) - 1697px) / 2)
 @mixin font($size, $lnh)
     font-size: $size
     line-height: $lnh
+
+.container
+    padding: 0 20px
+    @include plus1900()
+        padding: 0 135px

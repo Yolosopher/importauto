@@ -162,6 +162,17 @@
     @include plus1025()
         display: none
 
+.redbtnicon
+    @extend .loginbtn__mobile
+    border-radius: 12px
+    width: 54px
+    height: 54px
+    background-color: #D71F0F        
+    @include plus1025()
+        display: flex
+    &:hover
+        background-color: $darkred
+        
 
 .mobilenav
     position: fixed
