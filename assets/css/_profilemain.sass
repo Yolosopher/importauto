@@ -1,0 +1,174 @@
+.profilemain
+    margin: 20px 0 45px
+    @include plus1025()
+        margin: 20px 0 280px
+    &__form
+        position: static
+        width: 100%
+        margin-bottom: 180px
+        @include plus1025()
+            margin-bottom: 40px
+        ul
+            width: 50%
+    
+    &__resultheader
+        margin-bottom: 46px
+        @include plus1025()
+            margin-bottom: 65px
+
+        h2
+            font-family: bpg001caps
+            font-weight: normal
+            font-size: 16px
+            letter-spacing: 0.02em
+            line-height: 24px
+            color: #D8D8D8
+            max-width: 187px
+            @include plus1025()
+                max-width: unset
+            span
+                color: #000
+    &__resultlist
+        &__header
+            display: none
+            padding-left: 277.5px
+            width: 100%
+            color: #B6B6B6
+            margin-bottom: 56px
+            grid-template-columns: repeat(5, 1fr)
+            @include plus1025()
+                display: grid
+            li
+                cursor: default
+                font-family: bpg001caps
+                @include font(13px, 14px)
+                
+                @include plus1441()
+                    @include font(16px, 19px)
+
+        &__cars
+            display: grid
+            grid-gap: 25px
+            padding: 20px 15px 15px
+            
+            .key
+                color: #B6B6B6
+            li
+                border-radius: 12px
+                padding: 10px
+                box-shadow: 0px 0px 10px rgba(36, 52, 109, 0.2)
+                padding-top: 63px
+                position: relative
+                @include plus1025()
+                    padding: 10px
+                    box-shadow: 0px 3px 6px rgba(19, 190, 0, 0.1)
+                    display: flex
+                    align-items: center
+                p
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    @include plus1025()
+                        display: block
+                .key
+                    @include plus1025()
+                        display: none
+                h3
+                    position: absolute
+                    z-index: 2
+                    top: 20px
+                    cursor: default
+                    left: 16px
+                    @include plus700()
+                        left: 50%
+                        transform: translateX(-50%)
+                    @include plus1025()
+                        position: static
+                        transform: none
+            &__ligrid
+                flex-grow: 1
+                display: grid
+                grid-gap: 20px
+                @include plus1025()
+                    grid-gap: 0
+                    margin-left: 25px
+                    grid-template-columns: repeat(5, 1fr)
+                p
+                    font-family: firagoreg
+                    @include font(16px, 24px)
+                    cursor: default
+                    color: $black26
+                    .value
+                        text-align: right
+                        @include plus1025()
+                            text-align: unset
+            &__imgbox
+                width: 100%
+                height: 140px
+                overflow: hidden
+                border-radius: 8px
+                margin-bottom: 20px
+                @include plus700()
+                    height: 300px
+                @include plus1025()
+                    margin-bottom: 0
+                    position: relative  
+                    height: 140px
+                    width: 243px
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                a
+                    display: none
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    font-family: bpg001caps
+                    @include font(16px, 19px)
+                    font-weight: normal
+                    color: #fff
+                    transition: opacity .1s ease-in-out, height .3s .3s ease-in-out
+                    
+                    @include plus1025()
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        width: 0
+                        height: 0
+                        opacity: 0
+                        overflow: hidden
+                &:hover
+                    @include plus1025()
+                        a
+                            width: 100%
+                            background-color: rgba(#293F75, .6)
+                            height: 100%
+                            opacity: 1
+                            transition: opacity .1s ease-in-out
+
+            &__title
+                font-family: poppinsbold
+                @include font(16px, 24px)
+                color: $black26
+                @include plus1025()
+                    max-width: 170px
+                    overflow: hidden
+
+            &__payment 
+                @include plus1025()
+                    padding-right: 20px
+                    span
+                        &.red
+                            color: #D71F0F
+                        &.blue
+                            color: #293F75
+                        &.green
+                            color: #13BE00
+                    
+            &__myComment, &__adminComment
+                @include plus1025()
+                    padding-right: 20px
+                    @include maxcolumn(2)
+     
