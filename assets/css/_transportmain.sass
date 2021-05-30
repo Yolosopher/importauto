@@ -1,0 +1,178 @@
+.transportmain
+    padding: 0
+    @include plus1025()
+        padding: 0 20px
+    @include plus1900()
+        padding: 0 135px
+    &__calculator
+        display: grid
+        grid-gap: 30px
+        margin-bottom: 70px
+        @include plus1025()
+            grid-template-columns: 32% 1fr 
+            grid-gap: 25px
+            margin-bottom: 100px
+        &__calc
+            &__form
+                background-color: #293F75
+                padding: 60px 20px 40px
+
+                select
+                    display: none
+                &__selects
+                    margin-bottom: 40px
+                    @include plus1025()
+                        margin-bottom: 91px
+                .selectdiv
+                    height: 54px
+                    display: flex
+                    flex-direction: column
+                    width: 100%
+                    border-radius: 8px
+                    background-color: #fff
+                    color: $black26
+                    font-family: firagoreg
+                    @include font(16px, 17px)
+                    @include plus1025()
+                    position: relative
+                    padding: 0 20px
+                    margin-bottom: 16px
+                    &__header
+                        color: #fff
+                        opacity: .41
+                        font-family: bpg001caps
+                        margin-bottom: 5px
+                        font-weight: normal
+                        @include font(16px, 17px)
+                        &.active
+                            opacity: 1
+    
+                    &__activetext
+                        cursor: pointer
+                        position: relative
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        width: 100%
+                        height: 100%
+
+                        &::before
+                            content: attr(data-text)
+                        &::after
+                            content: url(../img/containersearch/chevron-down.svg)
+                        &:not([data-value="0"])
+                            + .selectdiv__header
+                                opacity: 1
+                    &__niceselect
+                        z-index: 1
+                        width: 100%
+                        position: absolute
+                        top: 42px
+                        left: 0
+                        background-color: #fff
+                        border-radius: 0 0 8px 8px
+                        display: grid
+                        grid-gap: 12px
+                        height: 0
+                        overflow: hidden
+                        padding: 0
+                        transition: .3s ease-in-out
+                        li
+                            cursor: pointer
+                            padding: 6px 20px
+                            &:hover
+                                color: #fff
+                                background-color: rgba($darkred, .7)
+                            &.active
+                                color: #fff
+                                background-color: $darkred
+                    &.toggled
+                        .selectdiv__niceselect
+                            height: var(--heighttt)
+                            padding-top: 30px
+                            padding-bottom: 36px
+
+                &__info
+                    color: #fff
+                    font-family: bpg001caps
+                    @include font(16px, 17px)
+                    &__item
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        &:not(:last-child)
+                            margin-bottom: 16px
+                        &__key
+                            display: flex
+                            align-items: center
+                            &::before
+                                margin-right: 16px
+                        &.innerTransit
+                            .transportmain__calculator__calc__form__info__item__key
+                                &::before
+                                    content: url(../img/transport/innertransit.svg)
+                        &.seaTransit
+                            .transportmain__calculator__calc__form__info__item__key
+                                &::before
+                                    content: url(../img/transport/seatransit.svg)
+
+                        &.wholePrice
+                            .transportmain__calculator__calc__form__info__item__key
+                                &::before
+                                    content: url(../img/transport/wholeprice.svg)
+
+        &__map
+            height: 200px
+
+            width: 100%
+            @include plus700()
+                height: 350px
+                padding: 0
+            @include plus1025()
+                height: 100%
+
+            .map
+                height: 100%
+                background-color: $blue
+                display: flex
+                justify-content: center
+                align-items: center
+                &::after
+                    content: 'აქ რუკა'
+                    color: #fff
+                    font-family: bpg001caps
+                    @include font(48px, 72px)
+                    
+    &__definition
+        margin-bottom: 40px
+        padding: 0 20px
+        @include plus1025()
+            margin-bottom: 135px
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-gap: 25px
+        &__imgbox
+            display: none
+            @include plus1025()
+                display: block
+                height: 100%
+                width: 100%
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    border-radius: 12px
+        &__ol
+            list-style-position: inside
+            font-family: firagoreg
+            @include font(14px, 32px)
+            @include plus1025()
+                @include font(16px, 32px)
+            
+            li
+                &:not(:last-child)
+                    margin-bottom: .5em
+        .containerssearchgrid__title
+            margin-bottom: 40px
+            @include plus1025()
+                margin-bottom: 0

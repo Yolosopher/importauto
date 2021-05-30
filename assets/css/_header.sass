@@ -43,6 +43,8 @@
     @include plus1025()
         height: 194px
         position: static
+    @include plus1900()
+        padding: 0 135px
     .burger
         cursor: pointer
         @include plus1025()
@@ -153,6 +155,55 @@
                     margin-right: 54px
             @include sizePlus(1366px)
                 width: 274px
+            &.signed
+                display: none
+                @include plus1025()
+                    display: flex
+                    border-radius: 8px
+                    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.1))
+                    position: relative
+                .infobar
+                    position: relative
+                    &::after
+                        position: absolute
+                        content: url(../img/containersearch/chevron-down.svg)
+                        top: 18px
+                        cursor: pointer
+                        right: 16.8px
+                &.toggled
+                    .signed__menu
+                        height: 90px
+                        padding-bottom: 20px
+                .signed__menu
+                    padding: 0 20px
+                    transition: .3s ease-in-out
+                    display: grid
+                    width: 100%
+                    position: absolute
+                    top: 50px
+                    grid-gap: 16px
+                    right: 0
+                    height: 0
+                    overflow: hidden
+                    @include font(14px, 16px)
+                    // height: max-content
+                    background-color: #fff
+                    z-index: 1
+                    border-radius: 0 0 8px 8px
+                    &__hr
+                        margin-top: 3px
+                        margin-bottom: 4px
+                        padding-left: 12px
+                        padding-right: 17px
+                        height: 1px
+                        opacity: .16
+                        background-color: #707070
+                    .signed__menu__logout
+                        color: $darkred
+                        cursor: pointer
+                    a
+                        color: $black26
+
 .loginbtn__mobile
     display: flex
     justify-content: center

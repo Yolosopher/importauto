@@ -118,7 +118,7 @@
           </button>
         </div>
       </form>
-      <div class="loginmodal__profile">
+      <div class="loginmodal__profile signed">
         <div class="loginmodal__profile__bars infobar">
           <div class="infobar__imgbox"><img src="assets/img/profilepic.png" alt=""></div>
           <div class="infobar__nameemail">
@@ -137,17 +137,26 @@
       <form class="mapsearch__form profilemain__form">
         <input id="search" type="search" name="search" placeholder="მოძებნე ავტომობილი მარკით ან VIN კოდით">
         <div class="mapsearch__form__hr"></div>
-        <div class="mapsearch__form__sealine">
-          <div class="mapsearch__form__sealine__selected"></div>
-          <select id="transportstatus" name="transportstatus"> 
+        <div class="mapsearch__form__sealine1 mapsearch__form__sealine">
+          <div class="mapsearch__form__sealine__selected1 mapsearch__form__sealine__selected"></div>
+          <select id="transportstatus1" name="transportstatus"> 
+            <option value="0" selected="selected">ტრანსპორტირების სტატუსით   </option>
+            <option value="1">ჩამოსული</option>
+            <option value="2">ჩამოუსვლელი</option>
+          </select>
+          <ul class="mapsearch__form__sealine__selectUl1 mapsearch__form__sealine__selectUl"></ul>
+        </div>
+        <div class="mapsearch__form__hr"></div>
+        <div class="mapsearch__form__sealine2 mapsearch__form__sealine">
+          <div class="mapsearch__form__sealine__selected2 mapsearch__form__sealine__selected"></div>
+          <select id="transportstatus2" name="transportstatus"> 
             <option value="0" selected="selected">გადახდის სტატუსით   </option>
             <option value="1">სრულად გადახდილი</option>
             <option value="2">ნაწილობრივ</option>
             <option value="3">გადასახდელი</option>
           </select>
-          <ul class="mapsearch__form__sealine__selectUl"></ul>
+          <ul class="mapsearch__form__sealine__selectUl2 mapsearch__form__sealine__selectUl"></ul>
         </div>
-        <div class="mapsearch__form__hr"></div>
         <button class="mapsearch__form__submit redbtn">
           <div class="redbtn__arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="20.414" height="20.414" viewbox="0 0 20.414 20.414">
@@ -171,52 +180,99 @@
           <li>ჩემი კომენტარი</li>
           <li>ადმინის კომენტარი</li>
         </ul>
-        <ul class="profilemain__resultlist__cars">
-          <li>
-            <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/mercedes.jpg" alt="Mercedes AMG GT R 2017"><a class="link" href="#">სრულად</a></div>
-            <div class="profilemain__resultlist__cars__ligrid">
-              <h3 class="profilemain__resultlist__cars__title">Mercedes AMG GT R 2017</h3>
-              <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
-              <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value green">სრულად გადახდილი</span>
-              </p>
-              <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-              <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/honda.jpg" alt="Cambridge Centre Honda"><a class="link" href="#">სრულად</a></div>
-            <div class="profilemain__resultlist__cars__ligrid">
-              <h3 class="profilemain__resultlist__cars__title">Cambridge Centre Honda</h3>
-              <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
-              <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value red">გადასახდელი</span>
-              </p>
-              <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-              <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/audi.jpg" alt="2020 Blue Audi A3 Sport"><a class="link" href="#">სრულად</a></div>
-            <div class="profilemain__resultlist__cars__ligrid">
-              <h3 class="profilemain__resultlist__cars__title">2020 Blue Audi A3 Sport</h3>
-              <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
-              <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value green">სრულად გადახდილი</span>
-              </p>
-              <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-              <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-            </div>
-          </li>
-          <li>
-            <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/bmw.jpg" alt="BMW X6 2019 Sport"><a class="link" href="#">სრულად</a></div>
-            <div class="profilemain__resultlist__cars__ligrid">
-              <h3 class="profilemain__resultlist__cars__title">BMW X6 2019 Sport</h3>
-              <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
-              <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value blue">ნაწილობრივ გადახდილი</span>
-              </p>
-              <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-              <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-            </div>
-          </li>
-        </ul>
+        <div class="profilemain__resultlist__cars__container">
+          <div class="profilemain__resultlist__cars__loader"><img src="assets/img/loader.svg" alt=""></div>
+          <ul class="profilemain__resultlist__cars">
+            <li data-transport="2" data-payment="1">
+              <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/mercedes.jpg" alt="Mercedes AMG GT R 2017"><a class="link" href="#">სრულად</a></div>
+              <div class="profilemain__resultlist__cars__ligrid">
+                <h3 class="profilemain__resultlist__cars__title">Mercedes AMG GT R 2017</h3>
+                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
+                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value blue">ნაწილობრივ გადახდილი</span>
+                </p>
+                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
+                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
+              </div>
+            </li>
+            <li data-transport="1" data-payment="2">
+              <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/honda.jpg" alt="Cambridge Centre Honda"><a class="link" href="#">სრულად</a></div>
+              <div class="profilemain__resultlist__cars__ligrid">
+                <h3 class="profilemain__resultlist__cars__title">Cambridge Centre Honda</h3>
+                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
+                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value green">სრულად გადახდილი</span>
+                </p>
+                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
+                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
+              </div>
+            </li>
+            <li data-transport="1" data-payment="3">
+              <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/audi.jpg" alt="2020 Blue Audi A3 Sport"><a class="link" href="#">სრულად</a></div>
+              <div class="profilemain__resultlist__cars__ligrid">
+                <h3 class="profilemain__resultlist__cars__title">2020 Blue Audi A3 Sport</h3>
+                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
+                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value red">გადასახდელი</span>
+                </p>
+                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
+                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
+              </div>
+            </li>
+            <li data-transport="2" data-payment="1">
+              <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/bmw.jpg" alt="BMW X6 2019 Sport"><a class="link" href="#">სრულად</a></div>
+              <div class="profilemain__resultlist__cars__ligrid">
+                <h3 class="profilemain__resultlist__cars__title">BMW X6 2019 Sport</h3>
+                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
+                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value blue">ნაწილობრივ გადახდილი</span>
+                </p>
+                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
+                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
+              </div>
+            </li>
+            <li data-transport="2" data-payment="1">
+              <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/mercedes.jpg" alt="Mercedes AMG GT R 2017"><a class="link" href="#">სრულად</a></div>
+              <div class="profilemain__resultlist__cars__ligrid">
+                <h3 class="profilemain__resultlist__cars__title">Mercedes AMG GT R 2017</h3>
+                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
+                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value blue">ნაწილობრივ გადახდილი</span>
+                </p>
+                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
+                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
+              </div>
+            </li>
+            <li data-transport="1" data-payment="2">
+              <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/honda.jpg" alt="Cambridge Centre Honda"><a class="link" href="#">სრულად</a></div>
+              <div class="profilemain__resultlist__cars__ligrid">
+                <h3 class="profilemain__resultlist__cars__title">Cambridge Centre Honda</h3>
+                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
+                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value green">სრულად გადახდილი</span>
+                </p>
+                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
+                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
+              </div>
+            </li>
+            <li data-transport="1" data-payment="3">
+              <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/audi.jpg" alt="2020 Blue Audi A3 Sport"><a class="link" href="#">სრულად</a></div>
+              <div class="profilemain__resultlist__cars__ligrid">
+                <h3 class="profilemain__resultlist__cars__title">2020 Blue Audi A3 Sport</h3>
+                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
+                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value red">გადასახდელი</span>
+                </p>
+                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
+                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
+              </div>
+            </li>
+            <li data-transport="2" data-payment="1">
+              <div class="profilemain__resultlist__cars__imgbox" href="#"><img src="assets/img/homegalleryslider/bmw.jpg" alt="BMW X6 2019 Sport"><a class="link" href="#">სრულად</a></div>
+              <div class="profilemain__resultlist__cars__ligrid">
+                <h3 class="profilemain__resultlist__cars__title">BMW X6 2019 Sport</h3>
+                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
+                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value blue">ნაწილობრივ გადახდილი</span>
+                </p>
+                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
+                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </main>
     <footer class="footer container">

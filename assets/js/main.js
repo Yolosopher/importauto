@@ -31,8 +31,12 @@ loginbtn__mobile.addEventListener('click', () => {
     loginmodal.classList.add('toggled')
 })
 nav__loginbtn.addEventListener('click', () => {
-    loginmodal.classList.add('toggled')
-    loginmodalbg.classList.add('toggled')
+    if (!nav__loginbtn.classList.contains('signed')) {
+        loginmodal.classList.add('toggled')
+        loginmodalbg.classList.add('toggled')
+    } else {
+        nav__loginbtn.classList.toggle('toggled')
+    }
 })
 
 loginmodal__X.addEventListener('click', () => {
