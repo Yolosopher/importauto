@@ -123,25 +123,45 @@
 
         &__map
             height: 200px
-
             width: 100%
+            background-color: #293F75
+            position: relative
             @include plus700()
                 height: 350px
                 padding: 0
             @include plus1025()
                 height: 100%
-
+            // &::after
+            //     content: ''
+            //     width: 100%
+            //     height: 100%
+            //     position: absolute
+            //     top: 0
+            //     right: 0
+            //     background-color: #293F75
+            //     opacity: .5
+            //     background-blend-mode: multiply
+            // color:  rgb(128, 92, 21)
             .map
                 height: 100%
-                background-color: $blue
-                display: flex
-                justify-content: center
-                align-items: center
-                &::after
-                    content: 'აქ რუკა'
-                    color: #fff
-                    font-family: bpg001caps
-                    @include font(48px, 72px)
+                // opacity: .5
+
+                // background-color: $blue
+                // display: flex
+                // justify-content: center
+                // align-items: center
+                // &::after
+                //     content: 'აქ რუკა'
+                //     color: #fff
+                //     font-family: bpg001caps
+                //     @include font(48px, 72px)
+                > div
+                    background-color: transparent !important
+                    > div
+                        > div:first-child
+                            > div:first-child
+                                > div:last-child
+                                    opacity: .5
                     
     &__definition
         margin-bottom: 40px

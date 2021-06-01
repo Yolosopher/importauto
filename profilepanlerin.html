@@ -132,149 +132,101 @@
     </div>
     <section class="pageInfoNav">
       <div class="pageInfoNav__container container">
-        <div class="pageInfoNav__box"><a href="index.html">მთავარი</a> > <span>პანელი</span></div>
+        <div class="pageInfoNav__box withcar"><a href="index.html">მთავარი</a> > <a href="profilepanel.html">პანელი</a> > <span>Lexus LX 470</span></div>
       </div>
     </section>
-    <main class="profilemain container">
-      <form class="mapsearch__form profilemain__form">
-        <input id="search" type="search" name="search" placeholder="მოძებნე ავტომობილი მარკით ან VIN კოდით">
-        <div class="mapsearch__form__hr"></div>
-        <div class="mapsearch__form__sealine1 mapsearch__form__sealine">
-          <div class="mapsearch__form__sealine__selected1 mapsearch__form__sealine__selected"></div>
-          <select id="transportstatus1" name="transportstatus"> 
-            <option value="0" selected="selected">ტრანსპორტირების სტატუსით   </option>
-            <option value="1">ჩამოსული</option>
-            <option value="2">ჩამოუსვლელი</option>
-          </select>
-          <ul class="mapsearch__form__sealine__selectUl1 mapsearch__form__sealine__selectUl"></ul>
-        </div>
-        <div class="mapsearch__form__hr"></div>
-        <div class="mapsearch__form__sealine2 mapsearch__form__sealine">
-          <div class="mapsearch__form__sealine__selected2 mapsearch__form__sealine__selected"></div>
-          <select id="transportstatus2" name="transportstatus"> 
-            <option value="0" selected="selected">გადახდის სტატუსით   </option>
-            <option value="1">სრულად გადახდილი</option>
-            <option value="2">ნაწილობრივ</option>
-            <option value="3">გადასახდელი</option>
-          </select>
-          <ul class="mapsearch__form__sealine__selectUl2 mapsearch__form__sealine__selectUl"></ul>
-        </div>
-        <button class="mapsearch__form__submit redbtn">
-          <div class="redbtn__arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20.414" height="20.414" viewbox="0 0 20.414 20.414">
-              <g transform="translate(-2 -2)">
-                <circle cx="8" cy="8" r="8" transform="translate(3 3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
-                <path d="M21,21l-4.35-4.35" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-              </g>
-            </svg>
+    <main class="panelin container" data-userid="2" data-carid="25">
+      <div class="panelin__content">
+        <div class="panelin__sliders">
+          <div class="panelin__mainswiper">
+            <div class="panelin__mainswiper__swiper swiper-container">
+              <div class="panelin__mainswiper__wrapper swiper-wrapper">
+                <div class="panelin__mainswiper__slide swiper-slide"><img src="assets/img/panelinslides/1.jpg" alt="1"></div>
+                <div class="panelin__mainswiper__slide swiper-slide"><img src="assets/img/panelinslides/2.jpg" alt="2"></div>
+                <div class="panelin__mainswiper__slide swiper-slide"><img src="assets/img/panelinslides/3.jpg" alt="3"></div>
+                <div class="panelin__mainswiper__slide swiper-slide"><img src="assets/img/panelinslides/4.jpg" alt="4"></div>
+              </div>
+            </div>
           </div>
-          <div class="redbtn__text">მოძებნე</div>
-        </button>
-      </form>
-      <div class="profilemain__resultheader">
-        <h2>ძიების შედეგი: <span>ყველა ავტომობილი</span></h2>
-      </div>
-      <div class="profilemain__resultlist">
-        <ul class="profilemain__resultlist__header">
-          <li>ავტომობილის ტიპი</li>
-          <li>ტრანსპორტირება</li>
-          <li>გადახდის სტატუსი</li>
-          <li>ჩემი კომენტარი</li>
-          <li>ადმინის კომენტარი</li>
-        </ul>
-        <div class="profilemain__resultlist__cars__container">
-          <div class="profilemain__resultlist__cars__loader"><img src="assets/img/loader.svg" alt=""></div>
-          <ul class="profilemain__resultlist__cars">
-            <li data-transport="2" data-payment="1">
-              <div class="profilemain__resultlist__cars__imgbox"><img src="assets/img/homegalleryslider/mercedes.jpg" alt="Mercedes AMG GT R 2017"><a class="link" href="profilepanlerin.html">სრულად</a></div>
-              <div class="profilemain__resultlist__cars__ligrid">
-                <h3 class="profilemain__resultlist__cars__title">Mercedes AMG GT R 2017</h3>
-                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
-                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value blue">ნაწილობრივ გადახდილი</span>
-                </p>
-                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
+          <div class="panelin__thumbs">
+            <div class="panelin__thumbs__swiper swiper-container">
+              <div class="panelin__thumbs__wrapper swiper-wrapper">
+                <div class="panelin__thumbs__slide swiper-slide"><img src="assets/img/panelinslides/1.jpg" alt="1"></div>
+                <div class="panelin__thumbs__slide swiper-slide"><img src="assets/img/panelinslides/2.jpg" alt="2"></div>
+                <div class="panelin__thumbs__slide swiper-slide"><img src="assets/img/panelinslides/3.jpg" alt="3"></div>
+                <div class="panelin__thumbs__slide swiper-slide"><img src="assets/img/panelinslides/4.jpg" alt="4"></div>
               </div>
-            </li>
-            <li data-transport="1" data-payment="2">
-              <div class="profilemain__resultlist__cars__imgbox"><img src="assets/img/homegalleryslider/honda.jpg" alt="Cambridge Centre Honda"><a class="link" href="profilepanlerin.html">სრულად</a></div>
-              <div class="profilemain__resultlist__cars__ligrid">
-                <h3 class="profilemain__resultlist__cars__title">Cambridge Centre Honda</h3>
-                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
-                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value green">სრულად გადახდილი</span>
-                </p>
-                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-              </div>
-            </li>
-            <li data-transport="1" data-payment="3">
-              <div class="profilemain__resultlist__cars__imgbox"><img src="assets/img/homegalleryslider/audi.jpg" alt="2020 Blue Audi A3 Sport"><a class="link" href="profilepanlerin.html">სრულად</a></div>
-              <div class="profilemain__resultlist__cars__ligrid">
-                <h3 class="profilemain__resultlist__cars__title">2020 Blue Audi A3 Sport</h3>
-                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
-                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value red">გადასახდელი</span>
-                </p>
-                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-              </div>
-            </li>
-            <li data-transport="2" data-payment="1">
-              <div class="profilemain__resultlist__cars__imgbox"><img src="assets/img/homegalleryslider/bmw.jpg" alt="BMW X6 2019 Sport"><a class="link" href="profilepanlerin.html">სრულად</a></div>
-              <div class="profilemain__resultlist__cars__ligrid">
-                <h3 class="profilemain__resultlist__cars__title">BMW X6 2019 Sport</h3>
-                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
-                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value blue">ნაწილობრივ გადახდილი</span>
-                </p>
-                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-              </div>
-            </li>
-            <li data-transport="2" data-payment="1">
-              <div class="profilemain__resultlist__cars__imgbox"><img src="assets/img/homegalleryslider/mercedes.jpg" alt="Mercedes AMG GT R 2017"><a class="link" href="profilepanlerin.html">სრულად</a></div>
-              <div class="profilemain__resultlist__cars__ligrid">
-                <h3 class="profilemain__resultlist__cars__title">Mercedes AMG GT R 2017</h3>
-                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
-                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value blue">ნაწილობრივ გადახდილი</span>
-                </p>
-                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-              </div>
-            </li>
-            <li data-transport="1" data-payment="2">
-              <div class="profilemain__resultlist__cars__imgbox"><img src="assets/img/homegalleryslider/honda.jpg" alt="Cambridge Centre Honda"><a class="link" href="profilepanlerin.html">სრულად</a></div>
-              <div class="profilemain__resultlist__cars__ligrid">
-                <h3 class="profilemain__resultlist__cars__title">Cambridge Centre Honda</h3>
-                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
-                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value green">სრულად გადახდილი</span>
-                </p>
-                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-              </div>
-            </li>
-            <li data-transport="1" data-payment="3">
-              <div class="profilemain__resultlist__cars__imgbox"><img src="assets/img/homegalleryslider/audi.jpg" alt="2020 Blue Audi A3 Sport"><a class="link" href="profilepanlerin.html">სრულად</a></div>
-              <div class="profilemain__resultlist__cars__ligrid">
-                <h3 class="profilemain__resultlist__cars__title">2020 Blue Audi A3 Sport</h3>
-                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოსული</span></p>
-                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value red">გადასახდელი</span>
-                </p>
-                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-              </div>
-            </li>
-            <li data-transport="2" data-payment="1">
-              <div class="profilemain__resultlist__cars__imgbox"><img src="assets/img/homegalleryslider/bmw.jpg" alt="BMW X6 2019 Sport"><a class="link" href="profilepanlerin.html">სრულად</a></div>
-              <div class="profilemain__resultlist__cars__ligrid">
-                <h3 class="profilemain__resultlist__cars__title">BMW X6 2019 Sport</h3>
-                <p class="profilemain__resultlist__cars__transporting"><span class="key">ტრანსპორტირება:</span><span class="value">ჩამოუსვლელი</span></p>
-                <p class="profilemain__resultlist__cars__payment"><span class="key">გადახდის სტატუსი:</span><span class="value blue">ნაწილობრივ გადახდილი</span>
-                </p>
-                <p class="profilemain__resultlist__cars__myComment"><span class="key">ჩემი კომენტარი:</span><span class="value">ეს არის ჩემი კომენტარი</span></p>
-                <p class="profilemain__resultlist__cars__adminComment"><span class="key">ადმინის კომენტარი:</span><span class="value">ეს არის ადმინის კომენტარი</span></p>
-              </div>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
+        <div class="panelin__details">
+          <div class="panelin__details__header">
+            <h1>Lexus LX 470</h1>
+            <div class="panelin__details__header__price"><span>1350</span> ლარი</div>
+          </div>
+          <div class="panelin__details__info">
+            <div class="panelin__details__info__item">
+              <div class="panelin__details__info__item__key">გამოშვების წელი</div>
+              <div class="panelin__details__info__item__value">2000</div>
+            </div>
+            <div class="panelin__details__info__item">
+              <div class="panelin__details__info__item__key">კოდი</div>
+              <div class="panelin__details__info__item__value">WP0ZZZ99ZTS392124</div>
+            </div>
+            <div class="panelin__details__info__item">
+              <div class="panelin__details__info__item__key">ძრავი</div>
+              <div class="panelin__details__info__item__value">4.7L 286 DOHC EFI 32-VALVE V8</div>
+            </div>
+            <div class="panelin__details__info__item">
+              <div class="panelin__details__info__item__key">საჭის მდებარეობა</div>
+              <div class="panelin__details__info__item__value">მარჯვნივ</div>
+            </div>
+            <div class="panelin__details__info__item">
+              <div class="panelin__details__info__item__key">ტრანსპორტირების სტატუსი</div>
+              <div class="panelin__details__info__item__value">გზაშია</div>
+            </div>
+            <div class="panelin__details__info__item">
+              <div class="panelin__details__info__item__key">გადახდის სტატუსი</div>
+              <div class="panelin__details__info__item__value">ნაწილობრივ გადახდილი</div>
+            </div>
+            <div class="panelin__details__info__item">
+              <div class="panelin__details__info__item__key">მანქანის მფლობელი</div>
+              <div class="panelin__details__info__item__value">გიორგი ბურდული</div>
+            </div>
+            <div class="panelin__details__info__item">
+              <div class="panelin__details__info__item__key">პირადი ნომერი</div>
+              <div class="panelin__details__info__item__value">01054588252</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panelin__comments">
+        <form class="panelin__comments__form">
+          <textarea id="textareaAddComment" name="" placeholder="დაწერე კომენტარი..."></textarea>
+          <button class="panelin__comments__form__submitbtn" type="submit">კომენტარის დატოვება</button>
+        </form>
+        <form class="panelin__comments__usercomment">
+          <div class="panelin__comments__profile"><img src="assets/img/profilepic.png" alt="">
+            <div class="panelin__comments__profile__namedate">
+              <div class="panelin__comments__profile__name">გიორგი ბურდული</div>
+              <time class="panelin__comments__profile__date"></time>
+            </div>
+          </div>
+          <textarea id="usercommenttextarea" name="text" disabled="disabled">მიღებულ თანხას ემატება საბაჟო მომსახურებისგადასახადი რომელიც შეადგენს ფიქსირებულად 150 ლარს და იმპორტის გადასახადი მომსახურების გადსახადში შედის ასევე დეკლარაციის შევსება, ამ მომსახურებაში დამატებით გადასახადს არ იხდით.</textarea>
+          <div class="panelin__comments__usercomment__editupdate">
+            <div class="panelin__comments__usercomment__edit"><span class="edittt">რედაქტირება</span><span class="closeee">გათიშვა</span></div>
+            <button class="panelin__comments__usercomment__update" type="submit">შენახვა</button>
+          </div>
+        </form>
+      </div>
+      <div class="panelin__admincomment">
+        <div class="panelin__comments__profile"><img src="assets/img/profilepic.png" alt="">
+          <div class="panelin__comments__profile__namedate">
+            <div class="panelin__comments__profile__name">ადმინისტრაცია</div>
+            <time class="panelin__comments__profile__date">Mar 25, 22:00 PM</time>
+          </div>
+        </div>
+        <textarea id="admincommenttextarea" name="text" disabled="disabled">მიღებულ თანხას ემატება საბაჟო მომსახურებისგადასახადი რომელიც შეადგენს ფიქსირებულად 150 ლარს და იმპორტის გადასახადი მომსახურების გადსახადში შედის ასევე დეკლარაციის შევსება, ამ მომსახურებაში დამატებით გადასახადს არ იხდით.</textarea>
       </div>
     </main>
     <footer class="footer container">
@@ -360,6 +312,13 @@
       </div>
     </footer>
     <script src="assets/js/main.js"> </script>
-    <script src="assets/js/panel.js"> </script>
+    <script>
+      let userCommentPostUrl = "" // POST
+      
+      
+    </script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"> </script>
+    <script src="assets/js/profilepanelin.js"> </script>
   </body>
 </html>

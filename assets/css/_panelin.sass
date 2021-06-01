@@ -1,0 +1,270 @@
+.panelin
+    padding-top: 30px
+    position: relative
+    padding-bottom: 48px
+    width: 100%
+    @include plus1025()
+        padding-bottom: 126px
+    &__content
+        display: grid
+        width: 100%
+        position: relative
+        grid-gap: 40px
+        margin-bottom: 40px
+        @include plus1025()
+            margin-bottom: 113px
+            justify-content: space-between
+            grid-template-columns: calc( (100% - 25px) / 2 ) 1fr
+            width: 100%
+            grid-gap: 25px
+    &__sliders
+        height: 100%
+        width: 100%
+        overflow: hidden
+        display: flex
+        flex-direction: column
+    &__mainswiper, &__thumbs
+        height: 234px
+        width: 100%
+        // overflow: hidden
+        margin-bottom: 9px
+        @include plus700()
+            height: 400px
+        @include plus1025()
+            margin-bottom: 25px
+            height: 420px
+        &__swiper
+            height: 100%
+            width: 100%
+            overflow: hidden
+        &__wrapper
+            height: 100%
+            display: flex
+        &__slide
+            height: 100%
+            flex-shrink: 0
+            img
+                border-radius: 12px
+                height: 100%
+                width: 100%
+                object-fit: cover
+    &__thumbs
+        height: 51px
+        @include plus700()
+            height: 140px
+        @include plus1025()
+            height: 122px
+
+    &__details
+        padding: 20px 15px
+        border-radius: 12px
+        background-color: #FAFAFA
+        @include plus1025()
+            padding: 20px
+        &__header
+            font-family: bpg001caps
+            margin-bottom: 37px
+            @include plus1025()
+                margin-bottom: 77px
+                display: flex
+                justify-content: space-between
+                align-items: center
+            h1
+                font-family: bpg001caps
+                font-weight: normal
+                @include font(24px, 28px)
+                color: #8B8B8B
+                margin-bottom: 10px
+                @include plus1025()
+                    margin-bottom: 0
+                    @include font(40px, 46px)
+                    color: #000
+            &__price
+                @include font(20px, 24px)
+                text-transform: uppercase
+                color: #293F75
+                @include plus1025()
+                    @include font(24px, 28px)
+        &__info
+            display: grid
+            width: 100%
+            grid-gap: 20px
+            @include plus1025()
+                grid-template-columns: 1fr 1fr
+                grid-gap: 31px 20px
+            &__item
+                &__key
+                    font-family: bpg001caps
+                    margin-bottom: 5px
+                    @include font(14px, 16px)
+                    color: #C6C6C6
+                    @include plus1025()
+                        margin-bottom: 4px
+                        @include font(16px, 19px)
+                &__value
+                    color: #24346D
+                    font-family: firagosemibold
+                    @include font(16px, 19px)
+                    letter-spacing: .04em
+                    font-weight: 600
+                    @include plus1025()
+                        @include font(20px, 24px)
+                        
+    &__comments
+        img
+            width: 36px
+            height: 36px
+            object-fit: cover
+            border-radius: 50%
+        &__form
+            margin-bottom: 40px
+            align-items: center
+            @include plus1025()
+                display: flex
+            textarea
+                flex-grow: 1
+                height: 200px
+                border-radius: 12px
+                padding: 18px 20px
+                overflow: hidden
+                width: 100%
+                font-family: firagoreg
+                border: 1px solid #707070
+                @include font(16px, 25px)
+                
+                @include plus1025()
+                    padding: 0 20px
+                    padding-top: 18px
+                    padding-bottom: 18px
+                    @include font(16px, 19px)
+                    height: 54px
+            &__submitbtn
+                width: 100%
+                cursor: pointer
+                color: #fff
+                font-family: bpg002caps
+                display: flex
+                justify-content: center
+                align-items: center
+                border-radius: 8px
+                height: 54px
+                transition: background-color .1s ease-in-out
+                background-color: $lightred
+                @include plus700()
+                    max-width: 253px
+                @include plus1025()
+                    margin-left: 25px
+                &:hover
+                    background-color: $darkred
+            &.inactive
+                display: none
+        &__usercomment
+            max-width: 565px
+            width: 100%
+            margin-bottom: 40px
+            display: none
+            @include plus1025()
+                margin-bottom: 35px
+            textarea
+                width: 100%
+                overflow: hidden
+                font-family: firagoreg
+                color: $black26
+                margin-bottom: 10px
+
+                @include font(16px, 24px)
+            &.exists
+                display: block
+            &__editupdate
+                display: flex
+                align-items: center
+            &__edit
+                display: flex
+                align-items: center
+                font-family: firagobold
+                max-width: max-content
+                @include font(15px, 18px)
+                color: $black26
+                opacity: .9
+                cursor: pointer
+                &::before
+                    content: url(../img/panelinslides/pencil.svg)
+                    margin-right: 8px
+                    transform: translateY(3px)
+                .closeee
+                    color: $darkred
+                    display: none
+                    
+                &.inEditing
+                    .edittt
+                        display: none
+                    .closeee
+                        display: inline
+                    + .panelin__comments__usercomment__update
+                        display: flex
+                    &::before
+                        width: 15px
+                        height: 15px
+                        transform: translateY(0)
+                        display: inline-block
+                        content: url(../img/panelinslides/closered.svg)
+                    
+            &__update
+                margin-left: 15px
+                cursor: pointer
+                color: $green  
+                align-items: center
+                font-family: firagobold
+                max-width: max-content
+                @include font(15px, 18px)
+                display: none
+                &::before
+                    content: url(../img/panelinslides/pencil-green.svg)
+                    margin-right: 8px
+                    transform: translateY(3px)
+
+        &__profile
+            margin-bottom: 40px
+            display: flex
+            align-items: center
+            @include plus1025()
+                margin-bottom: 20px
+            &__namedate
+                @include plus1025()
+                    display: flex
+                    align-items: center
+                    
+            &__name
+                font-family: bpg001caps
+                @include font(18px, 21px)
+                color: $black26
+                letter-spacing: .04em
+                margin: 0 16px
+            &__date
+                opacity: .88
+                @include font(11px, 13px)
+                font-family: firagoreg
+                color: #24346D
+                @include plus1025()
+                    @include font(13px, 15px)
+                    
+    &__admincomment
+        margin-top: 40px
+        width: 100%
+        @include plus1025()
+            margin-left: 139px
+            max-width: 565px
+        
+        img
+            width: 36px
+            height: 36px
+            object-fit: cover
+            border-radius: 50%  
+        textarea
+            width: 100%
+            overflow: hidden
+            font-family: firagoreg
+            color: $black26
+            margin-bottom: 10px
+
+            @include font(16px, 24px)     
