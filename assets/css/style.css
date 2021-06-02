@@ -4113,9 +4113,15 @@ html {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  grid-gap: 32px;
+  grid-gap: 10px;
+}
+
+@media screen and (min-width: 1025px) {
+  .borderfeemain__calculator__formandinfo__form__checkboxes {
+    grid-gap: 32px;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
 }
 
 .borderfeemain__calculator__formandinfo__form__checkboxes input {
@@ -4133,6 +4139,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .borderfeemain__calculator__formandinfo__form__checkboxes .customchkbx {

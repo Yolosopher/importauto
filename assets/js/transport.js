@@ -28,21 +28,29 @@ const actionForSelectedOption = (option, newLi, activeText, selectdiv) => {
 }
 
 let coords = {
-	poti: {
-		lat: 42.138998,
-		lng: 41.6046802,
+	antananarivo: {
+		lat: -18.8873012,
+		lng: 47.3724261,
+		logo: 'assets/img/transport/logos/1.svg',
+		price: 500
 	},
 	batumi: {
 		lat: 41.6027467,
 		lng: 41.5590666,
+		logo: 'assets/img/transport/logos/2.svg',
+		price: 700
 	},
 	ny: {
 		lat: 40.6976701,
 		lng: -74.2598737,
+		logo: 'assets/img/transport/logos/3.svg',
+		price: 200
 	},
 	brasilia: {
 		lat: -15.7750655,
 		lng: -48.0773182,
+		logo: 'assets/img/transport/logos/4.svg',
+		price: 300
 	},
 	// nuuk: {
 	//     lat: 64.1791647,
@@ -53,21 +61,32 @@ let coords = {
 	//     lng: 149.1204446
 	// }
 }
+const baggingportselect = document.getElementById('baggingportselect')
+const landingportselect = document.getElementById('landingportselect')
+
+const wholePriceSpan = document.querySelector('.wholePrice .transportmain__calculator__calc__form__info__item__value span')
+// const wholePriceSpan = document.querySelector('.wholePrice transportmain__calculator__calc__form__info__item__value span')
+
 selectdivs.forEach((selectdiv, selDivIndex) => {
 	let select = selectdiv.querySelector('select')
 	let options = selectdiv.querySelectorAll('select option')
 
 	// give options cords manually
-	options.forEach((op) => {})
 	let cordsEntries = Object.entries(coords)
 	cordsEntries = [...cordsEntries]
 	for (let i = 0; i < cordsEntries.length; i++) {
-        if (selDivIndex > 1) {
-            const entry = cordsEntries[i]
-            options[i + 1].dataset.place = entry[0]
-            options[i + 1].dataset.lat = entry[1].lat
-            options[i + 1].dataset.lng = entry[1].lng
-        }
+		const entry = cordsEntries[i]
+		if (selDivIndex > 0) {
+			options[i + 1].dataset.place = entry[0]
+			options[i + 1].dataset.lat = entry[1].lat
+			options[i + 1].dataset.lng = entry[1].lng
+		}
+		if (selDivIndex === 1) {
+			options[i + 1].dataset.logo = entry[1].logo
+		}
+		if (selDivIndex > 1) {
+			options[i + 1].dataset.price = entry[1].price
+		}
 	}
 	// give options cords manually END
 
@@ -90,16 +109,21 @@ selectdivs.forEach((selectdiv, selDivIndex) => {
 		let newLi = document.createElement('li')
 		newLi.innerText = option.innerText
 		newLi.dataset.value = option.value
-        if (selDivIndex > 1) {
-            if (option.dataset.lat && option.dataset.lng) {
-                newLi.dataset.lat = option.dataset.lat
-                newLi.dataset.lng = option.dataset.lng
-            } else {
-                newLi.dataset.lat = 0
-                newLi.dataset.lng = 0
-            }
-        }
-
+		if (selDivIndex > 0) {
+			if (option.dataset.lat && option.dataset.lng) {
+				newLi.dataset.lat = option.dataset.lat
+				newLi.dataset.lng = option.dataset.lng
+			} else {
+				newLi.dataset.lat = 0
+				newLi.dataset.lng = 0
+			}
+		}
+		if (selDivIndex === 1) {
+			newLi.dataset.logo = option.dataset.logo
+		}
+		if (selDivIndex > 1) {
+			newLi.dataset.price = option.dataset.price
+		}
 		if (option.selected) {
 			actionForSelectedOption(option, newLi, activeText, selectdiv)
 		}
@@ -186,13 +210,26 @@ function initMap() {
 			map.fitBounds(bounds)
 		}
 	}
-
+	function priceUpdater() {
+		let counter = 0
+		if (+baggingportselect.value !== 0) {
+			let activeLiPrice = +baggingportselect.nextElementSibling.querySelector('li.active').dataset.price
+			counter += activeLiPrice
+		}
+		
+		
+		if (+landingportselect.value !== 0) {
+			let activeLiPrice = +landingportselect.nextElementSibling.querySelector('li.active').dataset.price
+			counter += activeLiPrice
+		}
+		wholePriceSpan.innerText = counter
+	}
 	selectdivs.forEach((selectdiv, selectDivIndex) => {
 		let markers = []
 		let niceSelectUl = selectdiv.querySelector('.selectdiv__niceselect')
 		niceSelectUl.querySelectorAll('li').forEach((li) => {
 			google.maps.event.addDomListener(li, 'click', () => {
-				if (selectDivIndex > 1) {
+				if (selectDivIndex > 0) {
 					let selectName =
 						li.parentElement.previousElementSibling.name
 					if (+li.dataset.lat !== 0) {
@@ -208,14 +245,26 @@ function initMap() {
 							lat: +li.dataset.lat,
 							lng: +li.dataset.lng,
 						}
-						let marker = new google.maps.Marker({
-							position: loc,
-							icon: {
-								url: `assets/img/transport/${selectName}.svg`,
-								origin: new google.maps.Point(0, 0),
-								anchor: new google.maps.Point(20, 20),
-							},
-						})
+						let marker
+						if (selectDivIndex !== 1) {
+							marker = new google.maps.Marker({
+								position: loc,
+								icon: {
+									url: `assets/img/transport/${selectName}.svg`,
+									origin: new google.maps.Point(0, 0),
+									anchor: new google.maps.Point(20, 20),
+								},
+							})
+						} else {
+							marker = new google.maps.Marker({
+								position: loc,
+								icon: {
+									url: li.dataset.logo,
+									origin: new google.maps.Point(0, 0),
+									anchor: new google.maps.Point(20, 20),
+								},
+							})
+						}
 						markers.push(marker)
 						boundCoords.push(marker)
 						markers[0].setMap(map)
@@ -228,6 +277,7 @@ function initMap() {
 						markers.pop()
 					}
 					bounder()
+					priceUpdater()
 				}
 			})
 		})

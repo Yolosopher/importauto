@@ -61,8 +61,11 @@
                     width: max-content
                     align-items: center
                     align-content: center
-                    grid-template-columns: auto auto
-                    grid-gap: 32px
+                    grid-gap: 10px
+                    @include plus1025()
+                        grid-gap: 32px
+                        grid-template-columns: auto auto auto
+
                     input
                         display: none
                         &:checked
@@ -71,6 +74,7 @@
                     label
                         display: flex
                         align-items: center
+                        cursor: pointer
 
                     .customchkbx
                         width: 16px

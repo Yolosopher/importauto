@@ -32,7 +32,7 @@ const filterAction = (filterOpt, filterValue, items, reset = false) => {
 		loaderParent.classList.add('loaderon')
 		items.forEach((itm) => itm.classList.add('vanished'))
         items.forEach((each) => {
-            if (each.dataset[filterOpt] === filterValue)
+            if (+each.dataset[filterOpt] === +filterValue)
                 each.classList.remove('vanished')
         })
 		setTimeout(() => {
