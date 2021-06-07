@@ -20,8 +20,6 @@ const transportstatusSealineText2 = document.querySelector(
 	'.mapsearch__form__sealine__selected2'
 )
 
-
-
 // loader parent
 const loaderParent = document.querySelector(
 	'.profilemain__resultlist__cars__container'
@@ -31,10 +29,10 @@ const filterAction = (filterOpt, filterValue, items, reset = false) => {
 	if (!reset) {
 		loaderParent.classList.add('loaderon')
 		items.forEach((itm) => itm.classList.add('vanished'))
-        items.forEach((each) => {
-            if (+each.dataset[filterOpt] === +filterValue)
-                each.classList.remove('vanished')
-        })
+		items.forEach((each) => {
+			if (+each.dataset[filterOpt] === +filterValue)
+				each.classList.remove('vanished')
+		})
 		setTimeout(() => {
 			loaderParent.classList.remove('loaderon')
 		}, 300)
@@ -57,9 +55,15 @@ const getUlHeight = (ul) => {
 	return counter + 'px'
 }
 
-const makeNiceSelect = (opts, activeTextEl, slct, slct_ul, transportstatus = false) => {
+const makeNiceSelect = (
+	opts,
+	activeTextEl,
+	slct,
+	slct_ul,
+	transportstatus = false
+) => {
 	let optss = [...opts]
-    let paymentOrTransport = transportstatus ? 'transport' : 'payment'
+	let paymentOrTransport = transportstatus ? 'transport' : 'payment'
 	optss.forEach((option) => {
 		let newLi = document.createElement('li')
 		newLi.innerText = option.innerText
@@ -106,7 +110,7 @@ makeNiceSelect(
 	transportstatusSealineText1,
 	transportstatusSelect1,
 	transportstatusSelectUl1,
-    true
+	true
 )
 makeNiceSelect(
 	transportstatusSelectOptions2,
@@ -124,3 +128,78 @@ formsInMain.forEach((form) => {
 		}
 	})
 })
+
+// pagination
+const pagActiveLiNum = +document.querySelector(
+	'.profilemain__resultlist__pagination__ul li.active'
+).dataset.num
+const pagLastLiNum = +document.querySelector(
+	'.profilemain__resultlist__pagination__ul li:last-child'
+).dataset.num
+console.log('pagActiveLiNum: ', pagActiveLiNum)
+console.log('pagLastLiNum: ', pagLastLiNum)
+let aroundActiveNum = window.innerWidth > 1024 ? 5 : 3
+
+let ulll = document.querySelector('.profilemain__resultlist__pagination__ul')
+if (pagActiveLiNum >= aroundActiveNum) {
+	// less than lastPageNum + aroundActiveNum
+	if (pagActiveLiNum + aroundActiveNum - 1 <= pagLastLiNum) {
+		ulll.querySelectorAll('li').forEach((li) => {
+			if (+li.dataset.num !== pagActiveLiNum) {
+				if (
+					+li.dataset.num <
+						pagActiveLiNum - (aroundActiveNum - 1) / 2 ||
+					+li.dataset.num > pagActiveLiNum + (aroundActiveNum - 1) / 2
+				) {
+					if (
+						+li.dataset.num !== 1 &&
+						+li.dataset.num !== ulll.querySelectorAll('li').length
+					) {
+						li.classList.add('disabled')
+					}
+					if (+li.dataset.num === 1) {
+						li.classList.add('sidedots')
+					}
+					if (
+						+li.dataset.num === ulll.querySelectorAll('li').length
+					) {
+						li.classList.add('sidedots')
+					}
+				}
+			}
+		})
+	} else {
+		ulll.querySelectorAll('li').forEach((li) => {
+			li.classList.add('disabled')
+			if (+li.dataset.num >= ulll.querySelectorAll('li').length - aroundActiveNum) {
+				li.classList.remove('disabled')
+			}
+			if (+li.dataset.num === 1) {
+				li.classList.add('sidedots')
+				li.classList.remove('disabled')
+			}
+		})
+	}
+} else {
+	let firstLiDots = false
+	ulll.querySelectorAll('li').forEach((li) => {
+		li.classList.add('disabled')
+		if (+li.dataset.num <= pagActiveLiNum + (aroundActiveNum - 1) / 2
+		) {
+			li.classList.remove('disabled')
+		}
+		if (pagActiveLiNum === 5 && +li.dataset.num === 2) {
+			li.classList.add('disabled')
+			firstLiDots = true
+		}
+		if (+li.dataset.num === 1) {
+			li.classList.remove('disabled')
+		}
+		if (+li.dataset.num === ulll.querySelectorAll('li').length) {
+			li.classList.add('sidedots')
+			li.classList.remove('disabled')
+		}
+	})
+	if (firstLiDots)
+		document.querySelector('li[data-num="1"').classList.add('sidedots')
+}

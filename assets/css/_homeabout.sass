@@ -61,11 +61,27 @@
             font-family: firagoreg
             @include font(14px, 24px)
             margin-bottom: 40px
+            overflow: hidden
+            height: var(--textdefaultheight)
+            transition: height .2s ease-in-out
             @include plus1025()
                 @include font(16px, 24px)
                 
                 margin-bottom: 50px
+            &.toggled
+                height: var(--texttoggledheight)
         &__link
             width: 100%
             @include plus700()
                 width: 138px
+
+            &__goback
+                display: none
+            &.toggled
+                .homeabout__content__link__seeall
+                    display: none
+                .homeabout__content__link__goback
+                    display: inline
+                .redbtn__arrow
+                    svg
+                        transform: rotate(180deg)

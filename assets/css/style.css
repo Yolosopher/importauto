@@ -43,6 +43,11 @@
   src: url(../fonts/Poppins-Bold.ttf);
 }
 
+@font-face {
+  font-family: robotomedium;
+  src: url(../fonts/Roboto-Medium.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1786,6 +1791,10 @@ html {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 40px;
+  overflow: hidden;
+  height: var(--textdefaultheight);
+  -webkit-transition: height .2s ease-in-out;
+  transition: height .2s ease-in-out;
 }
 
 @media screen and (min-width: 1025px) {
@@ -1796,6 +1805,10 @@ html {
   }
 }
 
+.homeabout__content__textbox.toggled {
+  height: var(--texttoggledheight);
+}
+
 .homeabout__content__link {
   width: 100%;
 }
@@ -1804,6 +1817,23 @@ html {
   .homeabout__content__link {
     width: 138px;
   }
+}
+
+.homeabout__content__link__goback {
+  display: none;
+}
+
+.homeabout__content__link.toggled .homeabout__content__link__seeall {
+  display: none;
+}
+
+.homeabout__content__link.toggled .homeabout__content__link__goback {
+  display: inline;
+}
+
+.homeabout__content__link.toggled .redbtn__arrow svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .homegallery {
@@ -2218,9 +2248,6 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   height: 704px;
-  max-height: -webkit-max-content;
-  max-height: -moz-max-content;
-  max-height: max-content;
 }
 
 .homecontainers__cover {
@@ -3298,7 +3325,7 @@ html {
 
 @media screen and (min-width: 1025px) {
   .profilemain {
-    margin: 20px 0 280px;
+    margin: 20px 0 100px;
   }
 }
 
@@ -3427,6 +3454,13 @@ html {
   display: grid;
   grid-gap: 25px;
   padding: 20px 15px 15px;
+  margin-bottom: 69px;
+}
+
+@media screen and (min-width: 1025px) {
+  .profilemain__resultlist__cars {
+    margin-bottom: 88px;
+  }
 }
 
 .profilemain__resultlist__cars__container {
@@ -3927,6 +3961,12 @@ html {
 @media screen and (min-width: 1025px) {
   .transportmain__calculator__map {
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .transportmain__calculator__map {
+    padding: 0;
   }
 }
 
@@ -4813,5 +4853,170 @@ html {
   margin-bottom: 10px;
   font-size: 16px;
   line-height: 24px;
+}
+
+.profilemain__resultlist__pagination {
+  --pagmargin: 5px;
+  height: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1025px) {
+  .profilemain__resultlist__pagination {
+    --pagmargin: 20px;
+  }
+}
+
+.profilemain__resultlist__pagination__left, .profilemain__resultlist__pagination__right {
+  height: 100%;
+  background-color: rgba(215, 31, 15, 0.7);
+  width: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 12px;
+  opacity: 1;
+  cursor: pointer;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+@media screen and (min-width: 1025px) {
+  .profilemain__resultlist__pagination__left, .profilemain__resultlist__pagination__right {
+    width: 80px;
+  }
+}
+
+.profilemain__resultlist__pagination__left:hover, .profilemain__resultlist__pagination__right:hover {
+  opacity: 1;
+  background-color: #D71F0F;
+}
+
+.profilemain__resultlist__pagination__left.disabled, .profilemain__resultlist__pagination__right.disabled {
+  opacity: .4;
+}
+
+.profilemain__resultlist__pagination__left a, .profilemain__resultlist__pagination__right a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+@media screen and (min-width: 1025px) {
+  .profilemain__resultlist__pagination__left a, .profilemain__resultlist__pagination__right a {
+    color: #262626;
+  }
+}
+
+.profilemain__resultlist__pagination__left {
+  margin-right: var(--pagmargin);
+}
+
+.profilemain__resultlist__pagination__left svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.profilemain__resultlist__pagination__right {
+  margin-left: var(--pagmargin);
+}
+
+.profilemain__resultlist__pagination__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.profilemain__resultlist__pagination__ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profilemain__resultlist__pagination__ul li:not(:last-child) {
+  margin-right: var(--pagmargin);
+}
+
+.profilemain__resultlist__pagination__ul li.active {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 56px;
+  border-radius: 8px;
+  background-color: rgba(215, 31, 15, 0.7);
+  -webkit-transition: background-color .1s ease-in-out;
+  transition: background-color .1s ease-in-out;
+}
+
+.profilemain__resultlist__pagination__ul li.active:hover {
+  background-color: #D71F0F;
+}
+
+.profilemain__resultlist__pagination__ul li.active a {
+  color: #fff;
+}
+
+.profilemain__resultlist__pagination__ul li a {
+  color: #262626;
+  font-family: robotomedium;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@media screen and (min-width: 1025px) {
+  .profilemain__resultlist__pagination__ul li a {
+    font-size: 23px;
+    line-height: 30px;
+  }
+}
+
+.profilemain__resultlist__pagination__ul li.disabled {
+  display: none;
+}
+
+.profilemain__resultlist__pagination__ul li.sidedots:first-child::after {
+  content: '...';
+  display: inline-block;
+  margin-left: var(--pagmargin);
+}
+
+.profilemain__resultlist__pagination__ul li.sidedots:last-child::before {
+  content: '...';
+  display: inline-block;
+  margin-right: var(--pagmargin);
 }
 /*# sourceMappingURL=style.css.map */

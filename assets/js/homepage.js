@@ -43,3 +43,25 @@ if (window.matchMedia("(min-width: 1025px)").matches) {
 
     })
 }
+
+const homeAboutUl = document.querySelector('.homeabout__content__textbox')
+const homeAboutTogglerBtn = document.querySelector('.homeabout__content__link')
+
+let firstPinHomeAboutUl = homeAboutUl.querySelector('p').offsetHeight
+let secondPinHomeAboutUl = homeAboutUl.querySelector('p:nth-child(2)').offsetHeight
+
+console.log('firstPinHomeAboutUl: ', firstPinHomeAboutUl)
+console.log('secondPinHomeAboutUl: ', secondPinHomeAboutUl)
+let res = firstPinHomeAboutUl + secondPinHomeAboutUl + 'px'
+
+
+homeAboutUl.style.setProperty('--textdefaultheight', `calc(${res} + 1em)`)
+homeAboutUl.style.setProperty('--texttoggledheight', homeAboutUl.scrollHeight + 'px')
+
+homeAboutTogglerBtn.addEventListener('click', () => {
+    homeAboutTogglerBtn.classList.toggle('toggled')
+    homeAboutUl.classList.toggle('toggled')
+})
+setTimeout(() => {
+    homeAboutUl.style.setProperty('--texttoggledheight', homeAboutUl.scrollHeight + 'px')
+}, 100);

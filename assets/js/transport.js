@@ -99,7 +99,7 @@ selectdivs.forEach((selectdiv, selDivIndex) => {
 	window.addEventListener(
 		'click',
 		(e) => {
-			if (e.target.closest('.selectdiv__niceselect') !== niceSelectUl) {
+			if (e.target.closest('.selectdiv') !== selectdiv) {
 				selectdiv.classList.remove('toggled')
 			}
 		},
@@ -149,7 +149,7 @@ function initMap() {
 	var location = { lat: 42.16062308578706, lng: 43.509062471747875 }
 	// options
 	const opts = {
-		zoom: 6,
+		zoom: 7,
 		zoomControl: false,
 		// zoomControlOptions: {
 		// 	position: google.maps.ControlPosition.LEFT_CENTER,
@@ -207,7 +207,14 @@ function initMap() {
 				],
 			})
 			flightPathArr[0].setMap(map)
-			map.fitBounds(bounds)
+			map.fitBounds(bounds, {
+				padding: {
+					top: 0,
+					bottom: 0,
+					left: 0,
+					right: 0
+				}
+			})
 		}
 	}
 	function priceUpdater() {

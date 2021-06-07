@@ -59,3 +59,94 @@
 @import _panelin
 
 // panelin END
+
+// pagination
+
+
+.profilemain__resultlist__pagination
+    --pagmargin: 5px
+    height: 56px
+    display: flex
+    align-items: center
+    width: max-content
+    margin: 0 auto
+    @include plus1025()
+        --pagmargin: 20px
+    &__left, &__right
+        height: 100%
+        background-color: rgba(#D71F0F, .7)
+        width: 56px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 12px
+        opacity: 1
+        cursor: pointer
+        transition: .1s ease-in-out
+        @include plus1025()
+            width: 80px
+        &:hover
+            opacity: 1
+            background-color: #D71F0F
+        &.disabled
+            opacity: .4
+        a
+            display: flex
+            justify-content: center
+            align-items: center
+            color: #fff
+            @include plus1025()
+                color: $black26
+    &__left
+        margin-right: var(--pagmargin)
+        svg
+            transform: rotate(180deg)
+    &__right
+        margin-left: var(--pagmargin)
+    &__ul
+        display: flex
+        align-items: center
+        height: 100%
+        width: max-content
+        li
+            display: flex
+            height: 100%
+            cursor: pointer
+            align-items: center
+            &:not(:last-child)
+                margin-right: var(--pagmargin)
+            &.active
+                justify-content: center
+                width: 56px
+                border-radius: 8px
+                background-color: rgba(#D71F0F, .7)
+                transition: background-color .1s ease-in-out
+                &:hover
+                    background-color: #D71F0F  
+                a
+                    color: #fff  
+            a
+                color: $black26
+                font-family: robotomedium
+                @include font(18px, 22px)
+                
+                @include plus1025()
+                    @include font(23px, 30px)
+              
+            &.disabled
+                display: none
+            &.sidedots
+                &:first-child
+                    &::after
+                        content: '...'
+                        display: inline-block
+                        margin-left: var(--pagmargin)
+                &:last-child
+                    &::before
+                        content: '...'
+                        display: inline-block
+                        margin-right: var(--pagmargin)
+                    
+// pagination END
+    
+    
