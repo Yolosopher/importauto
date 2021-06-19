@@ -101,12 +101,12 @@ function initMap() {
 				lat: +element.dataset.lat,
 				lng: +element.dataset.lng,
 			}
-			console.log(element.dataset.logo)
+			console.log(`${window.location.origin}/importauto/assets/img/transport/baggingport.svg`)
 			locationMarker = new google.maps.Marker({
 				position: loc,
 				icon: {
 					// url: '/' + element.dataset.logo,
-					url: `importauto/assets/img/transport/baggingport.svg`,
+					url: `${window.location.origin}/importauto/assets/img/transport/baggingport.svg`,
 					origin: new google.maps.Point(0, 0),
 					anchor: new google.maps.Point(20, 20),
 				},
