@@ -30,16 +30,25 @@
         border-radius: 12px
         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08)
         padding: 5px
-        padding-left: 20px
+        padding-left: 10px
         display: flex
         align-items: center
         button
             margin-left: 10px
         input
             flex-grow: 1
+            border-radius: 12px
             width: fit-content
             font-weight: normal
             font-family: firagoreg
+            display: flex
+            padding: 0 10px
+            align-items: center
+            height: 100%
+            border: 1px solid transparent
             @include font(14px, 16px)
             @include plus1025()
                 @include font(16px, 18px)
+        &.invalid.invalid-shown
+            input
+                border-color: $lightred

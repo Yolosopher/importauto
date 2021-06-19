@@ -32,17 +32,48 @@ selectOptions.forEach(option => {
     })
     selectUl.style.setProperty('--heightt', getUlHeight(selectUl))
 })
-seaLineSelected.addEventListener('click', () => {
-    selectUl.classList.toggle('toggled')
-})
+// seaLineSelected.addEventListener('click', () => {
+//     selectUl.classList.toggle('toggled')
+// })
 
 
-const formsInMain = document.querySelectorAll('main form')
 
-formsInMain.forEach(form => {
-    form.addEventListener('submit', e => {
-        if(form.querySelector('input').value.length < 1) {
-            e.preventDefault()
+let containerSearchForms = document.querySelectorAll('.containerssearchgrid__form')
+
+containerSearchForms = [...containerSearchForms]
+
+containerSearchForms.forEach(form => {
+    let input = form.querySelector('input')
+    let submitBtn = form.querySelector('button')
+    let baseurl = submitBtn.dataset.href
+
+
+
+    input.addEventListener('change', () => {
+        if (input.value.length < 1) {
+            form.classList.add('invalid')
+            form.classList.add('invalid-shown')
+        } else {
+            form.classList.remove('invalid')
+            form.classList.remove('invalid-shown')
         }
+
+    })
+    // console.log(baseurl)
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        
+        if (input.value.length < 1) {
+            form.classList.add('invalid')
+            form.classList.add('invalid-shown')
+            return 
+        } else {
+            form.classList.remove('invalid')
+            form.classList.remove('invalid-shown')
+        }
+        let stringInputValue = String(input.value)
+        let completedLink = String(baseurl + stringInputValue)
+        window.open(completedLink, '_blank')
+        input.value = ''
     })
 })
