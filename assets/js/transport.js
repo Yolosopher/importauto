@@ -106,7 +106,7 @@ function initMap() {
 				position: loc,
 				icon: {
 					// url: '/' + element.dataset.logo,
-					url: `${window.location.origin}/build/assets/img/transport/baggingport.svg`,
+					url: `importauto/assets/img/transport/baggingport.svg`,
 					origin: new google.maps.Point(0, 0),
 					anchor: new google.maps.Point(20, 20),
 				},
